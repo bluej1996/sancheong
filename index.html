@@ -10,14 +10,18 @@
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title>산청군청</title>
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <![endif]-->
+  <script src="js/html5shiv.js"></script>
+  <![endif]-->
     <script src="js/prefixfree.min.js"></script>
     <script src="js/respond.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
 
     <link rel="stylesheet" href="js/swiper/swiper.min.css">
     <script src="js/swiper/swiper.min.js"></script>
+
+    <!-- aos 관련 코드 -->
+    <link href="js/aos/aos.css" rel="stylesheet">
+    <script src="js/aos/aos.js"></script>
 
     <!-- 사이트 스크립트 작성 -->
     <script src="js/jquery.min.js"></script>
@@ -27,19 +31,7 @@
 </head>
 
 <body>
-    <div class="modal">
-        <div class="modal-wrap">
-            <b>
-                이 사이트는 스터디용으로 제작되었으며<br>
-                리소스는 원저작자에게 있습니다.<br>
-                본 사이트는 Chrome에 최적화 되어있습니다.
-            </b>
-            <div class="modal-desc">
-                본사이트를 클론코드 하면서 여러가지 의견
-            </div>
-            <button class="modal-close">close</button>
-        </div>
-    </div>
+
     <!-- 패밀리사이트 -->
     <div class="family-wrap">
         <div class="family-box">
@@ -129,11 +121,19 @@
         </div>
     </div>
 
+
     <div class="wrap">
+
         <!-- 상단 -->
         <header class="header">
 
             <div class="header-top">
+                <!-- 반응형 상단 header -->
+                <div class="m-header-top clearfix">
+                    <button class="m-header-bt">전체메뉴</button>
+                    <button class="m-header-bt">패밀리사이트</button>
+                </div>  
+                <!--// 반응형 상단 header -->
                 <div class="container">
 
                     <a href="index.html" class="logo">
@@ -158,6 +158,14 @@
                             <li><a href="#">language</a></li>
                         </ul>
                     </div>
+
+                    <div class="help-icon">
+                        <button class="help-icon-map">문화관광</button>
+                        <button class="help-icon-mall">산엔청쇼핑몰</button>
+                        <button class="help-icon-search">검색</button>
+                        <button class="help-icon-menu">메뉴</button>
+                    </div>
+
                 </div>
             </div>
             <div class="header-bottom">
@@ -169,7 +177,7 @@
                             <li><a href="#">정보공개</a></li>
                             <li><a href="#">소식알림</a></li>
                             <li><a href="#">산청소개</a></li>
-                            <li><a href="#">분양별정보</a></li>
+                            <li><a href="#">분야별정보</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -215,6 +223,7 @@
                                     살기좋은 산청!
                                 </p>
                             </div>
+                            
 
                             <div class="submenu-tit-img submenu-tit-icon-1">
 
@@ -639,6 +648,7 @@
                                 </a>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -651,9 +661,8 @@
             <section class="visual">
                 <div class="container">
 
-                    <div class="visual-top clearfix">
-                        <div class="visual-left clearfix">
-
+                    <div class="visual-top clearfix" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        
                             <div class="weather-wrap">
                                 <span class="weather-icon">
                                     2.8℃
@@ -674,9 +683,6 @@
                                 </form>
                             </div>
 
-                        </div>
-
-                        <div class="visual-right">
                             <div class="sns-wrap">
 
                                 <img src="images/sns_icon.png" alt="" class="sns-icon">
@@ -690,22 +696,19 @@
                                     <a href="#" class="sns-insta"></a>
                                 </div>
 
-                            </div>
-                        </div>
+                            </div>                       
+
                     </div>
 
                     <div class="visual-main clearfix">
                         <div class="visual-left">
-                            <div class="visual-slide">
+                            <div class="visual-slide" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                                 <div class="visual-slide-top">
                                     <h2>알려드립니다</h2>
-
                                     <div class="sw-visual-control clearfix">
-
                                         <a href="#" class="link-vi">
                                             <b>코로나19</b> 상황보러가기
                                         </a>
-
                                         <div class="swiper-pagination sw-visual-pg"></div>
                                         <button class="sw-visual-prev"></button>
                                         <button class="sw-visual-next"></button>
@@ -741,23 +744,23 @@
                             </div>
                         </div>
                         <div class="visual-right">
-                            <div class="group">
+                            <div class="group" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
                                 <ul class="group-nav">
                                     <li><a href="#">행정조직도</a></li>
                                     <li><a href="#">직원/업무안내</a></li>
                                     <li><a href="#">청사안내</a></li>
                                 </ul>
                             </div>
-                            <div class="mayor">
+                            <div class="mayor" data-aos="fade-left" data-aos-duration="800" data-aos-delay="550">
 
                                 <a href="#">
-                                    명품산청, 행복산청<br>
-                                    산청군수 <span>이재근</span> 입니다.
+                                    <span>명품산청, 행복산청</span>
+                                    산청군수 <strong>이재근</strong> 입니다.
                                 </a>
 
                                 <div class="mayor-link">
                                     <a href="#">공약사항</a>
-                                    <a href="#">인사말</a> <br>
+                                    <a href="#">인사말</a>
                                     <a href="#">군수에게바란다</a>
                                 </div>
 
@@ -765,7 +768,6 @@
 
                             </div>
                         </div>
-
                     </div>
 
                 </div>
@@ -773,7 +775,7 @@
             <!-- 소식 -->
             <section class="notice">
                 <div class="container clearfix">
-                    <div class="notice-left">
+                    <div class="notice-left" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
 
                         <div class="notice-top">
 
@@ -797,71 +799,38 @@
 
                                     <span class="notice-cate notice-cate-1">새소식</span>
 
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">석면해체제거사업장 석면비산 측정 결과공개 (산청군청 본관동)</p>
 
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
-
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        석면안전관리법 제28조제2항 및 같은 법 시행규칙 제39조제3항에 따라 석면해체제거사업장의 측정결과를 붙임과 같이 공개합니다.
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022.05.06
                                     </span>
                                 </a>
 
                                 <a href="#" class="notice-link">
                                     <span class="notice-cate notice-cate-1">새소식</span>
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">경상남도 대표 누리집(홈페이지) 서비스 일시 중단 안내</p>
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
-
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        경상남도 통합데이터센터 노후 전기 개선공사 작업에 따라 도 대표 누리집(홈페이지) 서비스가 중단됨을 아래와 같이 알려드립니다.
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022.05.04
                                     </span>
                                 </a>
 
                                 <a href="#" class="notice-link">
                                     <span class="notice-cate notice-cate-1">새소식</span>
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">환경분야 제도개선 대국민 정책제안 공모 안내</p>
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
-
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        환경부는 관행적이고 불공정한 행정제도와 서비스 등의 개선을 통한 국민편익을 도모하고자 창의적인 생각 및 정책 아이디어를 공모하오니 많은 관심과 참여 바랍니다.
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022.05.04
                                     </span>
                                 </a>
 
@@ -872,75 +841,42 @@
 
                                     <span class="notice-cate notice-cate-2">공고</span>
 
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">전자입찰 공고[생초면 내동·추내 마을상하수도 개량사업]</p>
 
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
-
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        지방자치단체를 당사자로 하는 계약에 관한 법류 시행령 제33조의 규정에 의거 붙임과 같이 전자입찰 공고 합니다.
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022-05-06
                                     </span>
                                 </a>
                                 <a href="#" class="notice-link">
 
                                     <span class="notice-cate notice-cate-2">공고</span>
 
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">전자입찰 공고[철수지구 하수관로 정비사업 실시설계용역]</p>
 
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
-
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        지방자치단체를 당사자로 하는 계약에 관한 법류 시행령 제33조의 규정에 의거 붙임과 같이 전자입찰 공고 합니다.
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022-05-06
                                     </span>
                                 </a>
                                 <a href="#" class="notice-link">
 
                                     <span class="notice-cate notice-cate-2">공고</span>
 
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">전자입찰 공고[외정지구 농어촌 마을하수도 증설사업 실시설계용역]</p>
 
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
-
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        지방자치단체를 당사자로 하는 계약에 관한 법류 시행령 제33조의 규정에 의거 붙임과 같이 전자입찰 공고 합니다.
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022-05-06
                                     </span>
                                 </a>
                             </div>
@@ -952,25 +888,15 @@
                                         채용 <br>·<br> 시험
                                     </span>
 
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">산엔청쇼핑몰 콜센터 기간제근로자 채용 안내</p>
 
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
-
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        [ 산청군 공고 제2022-482호]
+                                        산엔청쇼핑몰 콜센터 운영을 위하여「산청군 공무직 근로자 및 기간제 근로자 관리규정」에 의거 붙임과 같이 기간제 근로자를 공개경쟁채용 하고자 하오니 많은 응시 바랍니다.
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022.05.06
                                     </span>
                                 </a>
                                 <a href="#" class="notice-link">
@@ -979,25 +905,14 @@
                                         채용 <br>·<br> 시험
                                     </span>
 
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">「2022년도 제4차 산청군 생활체육지도자 채용 공고</p>
 
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
-
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        2022년도 제4차 산청군 생활체육지도자 채용 공고
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022.05.06
                                     </span>
                                 </a>
                                 <a href="#" class="notice-link">
@@ -1006,25 +921,16 @@
                                         채용 <br>·<br> 시험
                                     </span>
 
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">삼장면 기초생활거점조성사업 사무장 채용공고</p>
 
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
+                                        [산청군 공고 제2022-471호]
 
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        산청군 삼장면 기초생활거점조성사업의 효율적인 추진을 위하여 주민위원회 운영·관리, 사업홍보 및 활성화 등 사업발전을 위한 역할을 전담하고, 각종 사업추진 관련 업무를 전담하여, 성공적인 삼장면 기초생활거점조성사업을 주도할 사무장을 붙임과 같이 채용 공고 하오니 관심 있으신 분들의 많은 응시를 바랍니다.
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022.05.04
                                     </span>
                                 </a>
                             </div>
@@ -1034,146 +940,94 @@
 
                                     <span class="notice-cate notice-cate-4">모집</span>
 
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">2022년 산청군 청소년수련관 과학 프로그램 참여자 모집 안내</p>
 
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
-
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        산청군청소년수련관에서 "과학 프로그램 - 아하!그렇구나 체험으로 배우는 원리과학" 참여자를 모집하오니 많은 참여 바랍니다.
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022.05.03
                                     </span>
                                 </a>
                                 <a href="#" class="notice-link">
 
                                     <span class="notice-cate notice-cate-4">모집</span>
 
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">2022년 「지리산국립공원 시민대학」 제15기 수강생 모집 안내</p>
 
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
+                                        지리산국립공원경남사무소에서는 지역사회 환경리더를 양성하고, 지역주민의
 
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        공원관리 참여 활성화를 위해 『지리산국립공원 제15기 시민대학』을 개최합니다.
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022.04.28
                                     </span>
                                 </a>
                                 <a href="#" class="notice-link">
-
                                     <span class="notice-cate notice-cate-4">모집</span>
-
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
-
+                                    <p class="notice-tit">2022년도 신규농업인 영농기초기술교육 교육생 모집 안내</p>
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
+                                        [산청군 농업기술센터 공고 제2022-31호]
 
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        농촌지역에 이주한 귀농인에게 영농(재배)기술 및 품질관리, 경영․마케팅 등에 필요한 전반적인 귀농, 귀촌 교육을 통하여 안정적 정착을 유도하기 위한 『2022년 신규농업인 영농기초기술교육』 모집 계획을 붙임과 같이 공고합니다.
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022.04.26
                                     </span>
                                 </a>
                             </div>
                             <!-- 교육/강좌 -->
                             <div class="notice-box">
-
                             </div>
                             <!-- 계약정보 -->
                             <div class="notice-box notice-box-info">
-
                                 <a href="#" class="notice-link">
-
                                     <span class="notice-cate notice-cate-6">계약<br>정보</span>
-
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
-
-
+                                    <p class="notice-tit">산청 금서농공단지 시설물 개보수 시행</p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022-05-06
                                     </span>
                                 </a>
-
                                 <a href="#" class="notice-link">
-
                                     <span class="notice-cate notice-cate-6">계약<br>정보</span>
-
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
-
-
+                                    <p class="notice-tit">군관리 도로변 농업용 양수장 시설 정비</p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022-05-06
                                     </span>
                                 </a>
-
                                 <a href="#" class="notice-link">
-
                                     <span class="notice-cate notice-cate-6">계약<br>정보</span>
-
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
-
-
+                                    <p class="notice-tit">계남마을 농로 및 배수로 정비공사 시행</p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022-05-06
                                     </span>
                                 </a>
-
                                 <a href="#" class="notice-link">
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">노은왕대뒷골 세천 정비공사 시행</p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022-05-06
                                     </span>
                                 </a>
-
                                 <a href="#" class="notice-link">
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">추내마을 배수로 안전시설물 설치</p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022-05-06
                                     </span>
                                 </a>
-
                                 <a href="#" class="notice-link">
-
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">도담어린이집 놀이터 개보수 사업</p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022-05-06
                                     </span>
                                 </a>
 
@@ -1183,81 +1037,86 @@
                                 <a href="#" class="notice-link">
 
                                     <span class="notice-cate notice-cate-7">행사<br>·<br>공연</span>
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">제15회 산청군공예협회 작품전 및 공예품 판매 체험행사 안내</p>
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
-
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        제15회 산청군공예협회 작품전 및 공예품 판매 체험행사 안내
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022-04-29
                                     </span>
                                 </a>
                                 <a href="#" class="notice-link">
 
                                     <span class="notice-cate notice-cate-7">행사<br>·<br>공연</span>
 
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">2022년 기산국악당 토요상설공연 안내</p>
 
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
+                                        2022년 기산국악당 토요상설공연 안내입니다.
 
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        가. 기 간: 2022. 5. 7.(토) ~ 11. 12.(토) 기간 중 토요일 오후 3시
+                                        - 5.7.(토): 인천남사당놀이보존회 <남사당풍물판굿>
+                                        - 5.14.(토): 시흥월미농악보존회 <시흥월미농악>
+                                        - 5.21.(토): 박경랑의 춤 교방풍류놀음 <범 나비 산청에 놀다>
+                                        - 5.28.(토): 풍류대장 국악어쿠스틱밴드 <해음>
+                                        - 6.4.(토): 풍류대장 월드뮤직밴드 ‘도시’ <IN도시>
+                                        - 6.11.(토): 연희집단 ‘the광대’ <도는놈 뛰는놈 나는놈>
+                                        - 6.18.(토): 이소정의 춤 <동화動花>
+                                        - 6.25.(토): 청배 연희단 <원(ONE)>
+                                        - 7.2.(토): 조선판스타 ‘경성구락부’ <신청년>
+                                        - 7.9.(토): 이다현 밴드 <가 배 장 at 산 청>
+                                        - 8.27.(토): 조선판스타 ‘퀸’ <NEW WAVE>
+                                        - 9.3.(토): 홍성현의 초벌비 <수호신 골매기>
+                                        - 9.17.(토): 전통타악 아작 <고정관념의 틀을 "아작" 내다>
+                                        - 10.1.(토): 조선판스타 박자희 <Music is My life>
+                                        - 10.8.(토): 어쿠스틱앙상블 ‘재비’ <청춘-산청으로 온 재비>
+                                        - 10.15.(토): 경상남도무형문화재 제27호 <진주오광대>
+                                        - 10.22.(토): 풍류대장 창작음악그룹 '잔향’ <소리의 향기는 백리를 걷는다>
+                                        - 10.29.(토): 이창순의 춤 <굿 프렌드>
+                                        - 11.5.(토): 김보성의 <소리 성(聲)>
+                                        - 11.12.(토): 김강유의 <첫소리, 첫장단, 첫몸짓>
+                                        나. 장 소: 남사예담촌 기산국악당
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022-04-27
                                     </span>
                                 </a>
                                 <a href="#" class="notice-link">
 
                                     <span class="notice-cate notice-cate-7">행사<br>·<br>공연</span>
 
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-tit">2022년 동의보감촌 마당극 상설공연 안내</p>
 
                                     <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
+                                        2022년 동의보감촌 마당극 상설공연 안내입니다.
 
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
+                                        ▷ 공연명: 마당극 <오작교 아리랑>, <효자전>, <찔레꽃>
+                                        ▷ 일 정
+                                        - 5.7.(토), 5.8.(일) 오후 2시: <오작교 아리랑>
+                                        - 5.21.(토), 5.22.(일) 오후 2시: <효자전>
+                                        - 6.4.(토), 6.5.(일) 오후 2시: <오작교 아리랑>
+                                        - 7.29.(금), 7.30.(토) 오후 7시: <찔레꽃>
+                                        - 8.5.(금), 8.6.(토) 오후 7시: <오작교 아리랑>
+                                        - 8.19.(금), 8.20.(토) 오후 7시: <효자전>
+                                        - 9.17.(토), 9.18.(일) 오후 2시: <찔레꽃>
+                                        - 10.15.(토), 10.16.(일) 오후 2시: <오작교 아리랑>
+                                        - 10.29.(토), 10.30.(일) 오후 2시: <효자전>
+                                        - 11.5.(토), 11.6.(일) 오후 2시: <찔레꽃>
+                                        ▷장소: 동의보감촌 잔디광장
+                                        ** 우천 시 실내 공연 예정
                                     </p>
                                     <span class="notice-date">
                                         <i></i>
-                                        2022-01-28
+                                        2022-04-27
                                     </span>
                                 </a>
                             </div>
                         </div>
 
                     </div>
-                    <div class="notice-right">
+                    <div class="notice-right" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                         <div class="notice-slide">
                             <!-- 공지사항 슬라이드 -->
                             <div class="notice-slide-top">
@@ -1283,7 +1142,7 @@
             </section>
             <!-- 서비스 -->
             <section class="service">
-                <div class="container">
+                <div class="container"  data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <h2>자주 찾는 서비스</h2>
                     <div class="service-slide">
                         <!-- Swiper -->
@@ -1387,7 +1246,7 @@
             <!-- 퀵메뉴-->
             <section class="quick">
                 <div class="container">
-                    <div class="quick-wrap">
+                    <div class="quick-wrap" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
 
                         <div class="quick-menu">
                             <ul class="quick-menu-list">
@@ -1410,37 +1269,56 @@
                             </div>
 
                             <div class="quick-list-wrap">
+                                
                                 <div class="quick-list quick-list-focus">
-                                    <a href="#" class="quick-link quick-icon-1">민원신청(정부24)</a>
-                                    <a href="#" class="quick-link quick-icon-2">건축민원</a>
-                                    <a href="#" class="quick-link quick-icon-3">자동차등록</a>
-                                    <a href="#" class="quick-link quick-icon-4">여권발급</a>
-                                    <a href="#" class="quick-link quick-icon-5 no-mr">지적측량</a>
-                                    <a href="#" class="quick-link quick-icon-6">지방세</a>
-                                    <a href="#" class="quick-link quick-icon-7">민원편람</a>
-                                    <a href="#" class="quick-link quick-icon-8">민원서식</a>
+
+                                    <!-- 목록 swiper -->
+                                    <div class="swiper-container sw-quick-1">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-1">민원신청(정부24)</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-2">건축민원</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-3">자동차등록</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-4">여권발급</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-5 no-mr">지적측량</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-6">지방세</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-7">민원편람</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-8">민원서식</a></div>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
+                                
                                 <div class="quick-list">
-                                    <a href="#" class="quick-link quick-icon-9">국민신문고</a>
-                                    <a href="#" class="quick-link quick-icon-10">환경신문고</a>
-                                    <a href="#" class="quick-link quick-icon-11">부실공사신고</a>
-                                    <a href="#" class="quick-link quick-icon-12">부조리신고</a>
-                                    <a href="#" class="quick-link quick-icon-13 no-mr">가로등관리</a>
-                                    <a href="#" class="quick-link quick-icon-14">상하수도신고</a>
-                                    <a href="#" class="quick-link quick-icon-15">안전신문고</a>
+                                    <div class="swiper-container sw-quick-2">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-9">국민신문고</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-10">환경신문고</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-11">부실공사신고</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-12">부조리신고</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-13 no-mr">가로등관리</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-14">상하수도신고</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-15">안전신문고</a></div>                                            
+                                        </div>
+                                    </div>
                                 </div>
+
                                 <div class="quick-list">
-                                    <a href="#" class="quick-link quick-icon-16">복지</a>
-                                    <a href="#" class="quick-link quick-icon-17">교육</a>
-                                    <a href="#" class="quick-link quick-icon-18">경제/일자리</a>
-                                    <a href="#" class="quick-link quick-icon-19">교통정보</a>
-                                    <a href="#" class="quick-link quick-icon-20 no-mr">보건</a>
-                                    <a href="#" class="quick-link quick-icon-21">농/축산</a>
-                                    <a href="#" class="quick-link quick-icon-22">환경</a>
-                                    <a href="#" class="quick-link quick-icon-23">재난안전</a>
-                                    <a href="#" class="quick-link quick-icon-24">상하수도</a>
-                                    <a href="#" class="quick-link quick-icon-25 no-mr">부동산</a>
+                                    <div class="swiper-container sw-quick-3"">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-16">복지</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-17">교육</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-18">경제/일자리</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-19">교통정보</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-20 no-mr">보건</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-21">농/축산</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-22">환경</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-23">재난안전</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-24">상하수도</a></div>
+                                            <div class="swiper-slide"><a href="#" class="quick-link quick-icon-25 no-mr">부동산</a>></div>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
 
                         </div>
@@ -1451,7 +1329,7 @@
             <!-- 여행 -->
             <section class="tour">
 
-                <div class="container">
+                <div class="container"  data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
 
                     <div class="tour-left">
 
@@ -1497,11 +1375,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img02.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                제 2경
+                                                <b>대원사 계곡</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1510,11 +1388,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img03.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                제 3경
+                                                <b>황매산 철쭉</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1523,11 +1401,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img04.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                제 4경
+                                                <b>전구형왕릉</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1536,11 +1414,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img05.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                제 5경
+                                                <b>경호강 비경</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1549,11 +1427,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img06.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                제 6경
+                                                <b>남사예담촌</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1562,11 +1440,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img07.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                제 7경
+                                                <b>남명조식유적지</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1575,11 +1453,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img08.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                제 8경
+                                                <b>청취암 조망</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1588,11 +1466,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img09.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                제 9경
+                                                <b>동의보감촌</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1612,11 +1490,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img14.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                생초국제조각공원
+                                                <b>꽃잔디축제</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1625,11 +1503,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img12.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                철쭉꽃의 향연
+                                                <b>황매산철쭉제</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1638,11 +1516,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img_add01.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                맑은물 경호강
+                                                <b>물 페스티벌</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1651,11 +1529,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img10.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                대한민국 대표축제
+                                                <b>한방약초축제</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1664,11 +1542,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img15.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                남명조식선생의 정신
+                                                <b>남명선비문화축제</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1677,50 +1555,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img11.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
-                                            </p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="tour-box">
-                                        <a href="#" class="tour-box-link">
-                                            <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
-                                            </div>
-                                            <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
-                                            </p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="tour-box">
-                                        <a href="#" class="tour-box-link">
-                                            <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
-                                            </div>
-                                            <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
-                                            </p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="tour-box">
-                                        <a href="#" class="tour-box-link">
-                                            <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
-                                            </div>
-                                            <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                대한민국 대표과일
+                                                <b>산청곶감축제</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1740,11 +1579,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img18.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                약초향기 그득한~
+                                                <b>동의보감촌</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1753,11 +1592,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img21.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                아름다운 마을 1호
+                                                <b>남사예담촌</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1766,11 +1605,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img17.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                힐링 기운 뿜뿜!
+                                                <b>자연휴양림</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1779,11 +1618,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img16.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                자연에서의 하루
+                                                <b>캠핑</b>
                                             </p>
                                         </a>
                                     </div>
@@ -1792,63 +1631,11 @@
                                     <div class="tour-box">
                                         <a href="#" class="tour-box-link">
                                             <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
+                                                <img src="images/tour_img19.jpg" alt="이미지">
                                             </div>
                                             <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
-                                            </p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="tour-box">
-                                        <a href="#" class="tour-box-link">
-                                            <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
-                                            </div>
-                                            <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
-                                            </p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="tour-box">
-                                        <a href="#" class="tour-box-link">
-                                            <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
-                                            </div>
-                                            <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
-                                            </p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="tour-box">
-                                        <a href="#" class="tour-box-link">
-                                            <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
-                                            </div>
-                                            <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
-                                            </p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="tour-box">
-                                        <a href="#" class="tour-box-link">
-                                            <div class="tour-box-img">
-                                                <img src="images/tour_img01.jpg" alt="이미지">
-                                            </div>
-                                            <p class="tour-box-title">
-                                                제 1경
-                                                <b>지리산 천왕봉</b>
+                                                길 따라 자연 따라~♪
+                                                <b>지리산 둘레길</b>
                                             </p>
                                         </a>
                                     </div>

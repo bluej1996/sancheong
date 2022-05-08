@@ -1,35 +1,28 @@
-$(document).ready(function () {
-
-    let modal_close = $('.modal-close');
-    let modal = $('.modal');
-
-    modal_close.click(function(){
-        modal.hide();
-    });
-
-    let modal_bt = $('.modal-bt');
-    modal_bt.click(function(){
-        modal.show();
-    });
-
-});
 window.onload = function () {
+
+    // aos 관련
+    AOS.init({
+        once: true
+    });
+
     // 패밀리 사이트 기능
     let family_hide = $('.family-hide');
     let family_wrap = $('.family-wrap');
-    let family = $('.family')
-    family_hide.click(function(){
+    let family = $('.family');
+
+    family_hide.click(function () {
         family_wrap.fadeOut(300);
         // 스크롤바 디폴트 처리
         $('html').css('overflow-x', 'hidden');
         $('html').css('overflow-y', 'auto');
     });
 
-    family.click(function(){
+    family.click(function () {
         family_wrap.fadeIn(300);
         // 스크롤바 없애기
-        $('html').css('overflow','hidden');
+        $('html').css('overflow', 'hidden');
     });
+
     // 비주얼 슬라이드
     let sw_visual = new Swiper('.sw-visual', {
         effect: 'fade',
@@ -45,7 +38,7 @@ window.onload = function () {
         autoplay: {
             delay: 2000,
             disableOninteraction: false,
-        },        
+        },
         touchRatio: 0.05,
         pagination: {
             el: '.sw-visual-pg',
@@ -66,97 +59,92 @@ window.onload = function () {
     });
 
     let sw_visual_pause = $('.sw-visual-pause');
-    sw_visual_pause.click(function(){
+    sw_visual_pause.click(function () {
         let temp = $(this).hasClass('sw-visual-pause-active');
-        if(temp != true) {
+        if (temp != true) {
             $(this).addClass('sw-visual-pause-active');
             sw_visual.autoplay.stop();
-        }else{
+        } else {
             $(this).removeClass('sw-visual-pause-active');
             sw_visual.autoplay.start();
         }
     });
 
     // 팝업존 슬라이드
-    let sw_notice_data = [
-        {
+    let sw_notice_data = [{
             'imgurl': 'popup_slide_01.png',
-            'alt' : '팝업존',
-            'link' : '#',
+            'alt': '팝업존',
+            'link': '#',
             'target': '_self'
         },
         {
             'imgurl': 'popup_slide_02.png',
-            'alt' : '팝업존',
-            'link' : '#',
+            'alt': '팝업존',
+            'link': '#',
             'target': '_self'
         },
         {
             'imgurl': 'popup_slide_03.png',
-            'alt' : '팝업존',
-            'link' : '#',
+            'alt': '팝업존',
+            'link': '#',
             'target': '_self'
         },
         {
             'imgurl': 'popup_slide_04.png',
-            'alt' : '팝업존',
-            'link' : '#',
+            'alt': '팝업존',
+            'link': '#',
             'target': '_self'
         },
         {
             'imgurl': 'popup_slide_05.png',
-            'alt' : '팝업존',
-            'link' : '#',
+            'alt': '팝업존',
+            'link': '#',
             'target': '_self'
         },
         {
             'imgurl': 'popup_slide_06.png',
-            'alt' : '팝업존',
-            'link' : '#',
+            'alt': '팝업존',
+            'link': '#',
             'target': '_self'
         },
         {
             'imgurl': 'popup_slide_07.png',
-            'alt' : '팝업존',
-            'link' : '#',
+            'alt': '팝업존',
+            'link': '#',
             'target': '_self'
         },
         {
             'imgurl': 'popup_slide_08.png',
-            'alt' : '팝업존',
-            'link' : '#',
+            'alt': '팝업존',
+            'link': '#',
             'target': '_self'
         },
         {
             'imgurl': 'popup_slide_09.png',
-            'alt' : '팝업존',
-            'link' : '#',
+            'alt': '팝업존',
+            'link': '#',
             'target': '_self'
         },
         {
             'imgurl': 'popup_slide_10.png',
-            'alt' : '팝업존',
-            'link' : '#',
+            'alt': '팝업존',
+            'link': '#',
             'target': '_self'
         }
     ];
-    
+
     // 팝업존 목록 총 개수
     let sw_notice_total = sw_notice_data.length;
 
     // html 만들기
     let sw_notice_html = '';
-    for(let i = 0; i < sw_notice_total; i++){
+    for (let i = 0; i < sw_notice_total; i++) {
 
         let temp_data = sw_notice_data[i];
 
         sw_notice_html = sw_notice_html + '<div class=swiper-slide>';
-
-        
         sw_notice_html = sw_notice_html + '<a href=';
-
         sw_notice_html = sw_notice_html + temp_data.link;
-
         sw_notice_html = sw_notice_html + '>';
 
         sw_notice_html = sw_notice_html + '<img src=images/';
@@ -164,9 +152,7 @@ window.onload = function () {
         sw_notice_html = sw_notice_html + ' alt=';
         sw_notice_html = sw_notice_html + temp_data.alt;
         sw_notice_html = sw_notice_html + ' class=sw-notice-link>';
-        
         sw_notice_html = sw_notice_html + '</a>';
-
         sw_notice_html = sw_notice_html + '</div>';
     }
 
@@ -175,14 +161,14 @@ window.onload = function () {
     let sw_notice_wrapper = $('.sw-notice .swiper-wrapper');
     sw_notice_wrapper.html(sw_notice_html);
 
-    let sw_notice = new Swiper('.sw-notice',{
+    let sw_notice = new Swiper('.sw-notice', {
         autoplay: {
-            delay: 2000, 
+            delay: 2000,
             disableOninteraction: false,
         },
         loop: true,
-        slidesPerView: 2,
-        spaceBetween: 0,
+        slidesPerView: 4,
+        spaceBetween: 30,
         navigation: {
             nextEl: '.sw-notice-next',
             prevEl: '.sw-notice-prev',
@@ -201,20 +187,84 @@ window.onload = function () {
                     ' / ' +
                     '<span class="' + totalClass + '"></span>';
             }
-        }
+        },
+        breakpoints: {
+            1000: {
+                slidesPerView: 2,
+                spaceBetween: 0,
+            },
+        },
+
     });
 
     let sw_notice_pause = $('.sw-notice-pause');
-    sw_notice_pause.click(function(){
+    sw_notice_pause.click(function () {
         let temp = $(this).hasClass('sw-notice-pause-active');
-        if(temp != true) {
+        if (temp != true) {
             $(this).addClass('sw-notice-pause-active');
             sw_notice.autoplay.stop();
-        }else{
+        } else {
             $(this).removeClass('sw-notice-pause-active');
             sw_notice.autoplay.start();
         }
     });
+
+
+    // 퀵링크 관련 슬라이드
+    let sw_quick;  
+    // 기본 슬라이드 체크 대상
+    let sw_quick_div = '.sw-quick-1';
+    // swiper 에 걸어줄 옵션  
+    let sw_quick_obj = {
+        slidesPerView: 2,
+        breakpoints : {
+            1000 : {
+                slidesPerView: 4,
+            }, 
+            640 : {
+                slidesPerView: 3,
+            }, 
+        }
+    };
+    
+    // 화면을 리사이징 했을 때 판단을 한다.
+    $(window).resize(function(){
+        resetQuick();
+    });
+
+    // 새로 고침 또는 resize 했을 때 실행할 함수
+    function resetQuick(){
+        // window 의 너비를 파악한다.
+        let temp = $(window).width();
+        // window 너비가 1200과 같거나 작고
+        // swiper 슬라이드 가 없을 때
+        if(temp <= 1200 && sw_quick == undefined){
+
+            // 새로운 슬라이드를 생성해 준다.
+            sw_quick = new Swiper(sw_quick_div, sw_quick_obj);
+
+        }else if(temp <= 1200 && sw_quick_1 != undefined){
+            // 계속 화면 사이즈는 체크를 하고 있는 상태에서
+            // 슬라이드가 이미 존재할 때 새로 생성할 필요 없다.
+        }else{
+            // 슬라이드가 존재할 때만 슬라이드를 제거한다.
+            if(sw_quick != undefined) {
+                sw_quick.destroy();                
+                sw_quick = undefined;
+                // swiper 스타일 시트 제거
+                $('.sw-quick-1').find('.swiper-wrapper').removeAttr('style');
+                $('.sw-quick-2').find('.swiper-wrapper').removeAttr('style');
+                $('.sw-quick-3').find('.swiper-wrapper').removeAttr('style');
+                // swiper 스타일 시트 제거
+                $('.sw-quick-1').find('.swiper-slide').removeAttr('style');
+                $('.sw-quick-2').find('.swiper-slide').removeAttr('style');
+                $('.sw-quick-3').find('.swiper-slide').removeAttr('style');
+            }            
+        }
+    }
+    // 새로 고침할 떄 체크 한다.
+    resetQuick();
+
 
     // 자주 찾는 서비스 슬라이드
     let sw_service = new Swiper(".sw-service", {
@@ -230,7 +280,7 @@ window.onload = function () {
     // 투어 슬라이드 1
     let sw_tour_1 = new Swiper('.sw-tour-1', {
         slidesPerView: 3,
-        allowTouchMove : false,
+        allowTouchMove: false,
         navigation: {
             prevEl: '.sw-tour-1 .sw-tour-prev',
             nextEl: '.sw-tour-1 .sw-tour-next',
@@ -240,7 +290,7 @@ window.onload = function () {
     });
     let sw_tour_2 = new Swiper('.sw-tour-2', {
         slidesPerView: 3,
-        allowTouchMove : false,
+        allowTouchMove: false,
         navigation: {
             prevEl: '.sw-tour-2 .sw-tour-prev',
             nextEl: '.sw-tour-2 .sw-tour-next',
@@ -250,7 +300,7 @@ window.onload = function () {
     });
     let sw_tour_3 = new Swiper('.sw-tour-3', {
         slidesPerView: 3,
-        allowTouchMove : false,
+        allowTouchMove: false,
         navigation: {
             prevEl: '.sw-tour-3 .sw-tour-prev',
             nextEl: '.sw-tour-3 .sw-tour-next',
@@ -265,16 +315,16 @@ window.onload = function () {
     // 현재 선택된 슬라이드 순서번호
     let tour_show_index;
 
-    $.each(tour_menu, function(index, item) {
-        $(this).click(function(event){  
+    $.each(tour_menu, function (index, item) {
+        $(this).click(function (event) {
             event.preventDefault();
             tourSelect(index);
         });
     });
 
-    function tourSelect(_index){
+    function tourSelect(_index) {
         // 동일한 슬라이드를 보려고 하는 경우는 실행 하지 않는다.
-        if(_index == tour_show_index) {
+        if (_index == tour_show_index) {
             return;
         }
         // 보이는 슬라이드 번호 업데이트
@@ -309,56 +359,74 @@ window.onload = function () {
             nextEl: '.sw-banner-next',
         }
     });
-    // 메뉴 기능
+
+    // 메뉴기능
     let gnb_a = $('.gnb li a');
     let gnb_li = $('.gnb > li');
+
     let submenu_tit = $('.submenu-tit');
     let submenu_tit_img = $('.submenu-tit-img');
     let submenu_list_box = $('.submenu-list-box');
-    let submenu_part_box = $('.submenu-part-box')
+    let submenu_part_box = $('.submenu-part-box');
     let submenu_wrap = $('.submenu-wrap');
     let submenu_wrap_height = [565, 510, 720, 430, 700, 235];
     let header_bottom = $('.header-bottom');
     let header = $('.header');
+    let header_line = $('.header-line');
+    // 선택된 메뉴를 저장한다.
     let header_index = 10000;
-    let header_line = $('header-line');
 
-    $.each(gnb_a, function(index, item){
-        $(this).mouseenter(function(){
-            if(index == header_index){
+    $.each(gnb_a, function (index, item) {
+
+        $(this).mouseenter(function () {
+
+            if (index == header_index) {
                 return;
             }
             header_index = index;
+
             // 포커스 유지
             gnb_a.removeClass('gnb-focus');
             gnb_a.eq(index).addClass('gnb-focus');
+
             gnb_li.removeClass('gnb-li-focus');
             gnb_li.eq(index).addClass('gnb-li-focus');
 
             header_line.addClass('header-line-focus');
 
+
             submenu_wrap.css('height', submenu_wrap_height[index]);
+
             submenu_tit.hide();
             submenu_tit.eq(index).stop().fadeIn(200);
+
             submenu_tit_img.hide();
             submenu_tit_img.eq(index).stop().fadeIn(200);
+
             submenu_list_box.hide();
             submenu_list_box.eq(index).stop().fadeIn(200);
+
             submenu_part_box.hide();
-            if(index == 5){
+            if (index == 5) {
                 submenu_part_box.stop().fadeIn(200);
-            };
+            }
+
             header.addClass('header-focus');
+
         });
+
     });
-    header_bottom.mouseleave(function(){
+
+    header_bottom.mouseleave(function () {
         submenu_wrap.css('height', 0);
         header.removeClass('header-focus');
         header_index = 10000;
+        // 포커스 해제
         gnb_a.removeClass('gnb-focus');
         gnb_li.removeClass('gnb-li-focus');
         header_line.removeClass('header-line-focus');
     });
+
     // 공지사항 탭 메뉴
     // 1. 탭의 메뉴들을 저장해야 한다.
     let notice_tab_menu = $('.notice-list li a');
@@ -416,6 +484,10 @@ window.onload = function () {
             quick_tab_contents.removeClass('quick-list-focus');
             quick_tab_contents.eq(index).addClass('quick-list-focus');
 
+            // 탭 메뉴 눌렀을 때 Slide 처리도 함께 진행
+            sw_quick_div = `.sw-quick-${index + 1}`;
+            sw_quick = undefined
+            resetQuick();
         });
     });
 
