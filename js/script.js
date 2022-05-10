@@ -4,7 +4,21 @@ window.onload = function () {
     AOS.init({
         once: true
     });
+    let modal_close = $('.modal-close');
+    let modal_close_2 = $('.modal-close-2');
+    let modal = $('.modal');
+    let modal_review = $('.modal-review');
+    let modal_review_bt = $('.modal-review-bt');
 
+    modal_close.click(function(){
+        modal.hide();
+    });
+    modal_close_2.click(function(){
+        modal.hide();
+    });
+    modal_review_bt.click(function(){
+        modal_review.show();
+    });
     // 패밀리 사이트 기능
     let family_hide = $('.family-hide');
     let family_wrap = $('.family-wrap');
